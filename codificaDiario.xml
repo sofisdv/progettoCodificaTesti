@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transform.xsl"?> 
+
+<!DOCTYPE TEI SYSTEM "tei_all.dtd">
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Codifica elettronica del diario di Emanuele Artom</title>
+                <author ref="#EA">Artom, Emanuele (1915-1944)</author>
+                <respStmt xml:id="SDV">
+                    <resp>Codifica TEI realizzata da </resp>
+                    <name>Sofia Di Viesti</name>
+                </respStmt>
+            </titleStmt>
+            <editionStmt>
+                <edition>
+                    Edizione digitale realizzata a <date when="2024-01">febbraio 2024</date>.
+                </edition>
+                <principal>Sofia Di Viesti</principal>
+                <sponsor>Università di Pisa</sponsor>
+                <respStmt>
+                    <resp>Revisione della codifica a cura di</resp>
+                    <name>Angelo Mario Del Grosso</name>
+                </respStmt>
+            </editionStmt>
+            <publicationStmt>
+                <distributor ref="#unipi">Università di Pisa</distributor>
+                <address>
+                    <addrLine>Lungarno Antonio Pacinotti 43,</addrLine>
+                    <addrLine>56126,</addrLine>
+                    <addrLine>Pisa (PI),</addrLine>
+                    <addrLine>IT</addrLine>
+                </address>
+                <availability status="free">
+                    <p>
+                        Questa edizione digitale è libera e diffusa attraverso <ref target="https://github.com/sofisdv/progettoCodificaTesti/tree/main">GitHub</ref>.
+                    </p>
+                </availability>
+            </publicationStmt>
+            <notesStmt>
+                <note>Edizione digitale realizzata come progetto d'esame di Codifica di testi del corso di laurea in Informatica Umanistica dell'Università di Pisa</note>
+            </notesStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <country key="IT">Italia</country>
+                        <settlement type="city" ref="#MI">Milano</settlement>
+                        <institution ref="#CDEC">CDEC - Centro di Documentazione Ebraica Contemporanea</institution>
+                        <repository ref="http://digital-library.cdec.it/cdec-web/storico/detail/IT-CDEC-ST0003-000001/Fondo+Emanuele+Artom.html">Fondo Emanuele Artom</repository>
+                        <collection>Fondo Emanuele Artom</collection>
+                    </msIdentifier>
+                    <msContents>
+                        <summary>
+                            Raccolta degli scritti autografi di <name type="person" ref="#EA">Emanuele Artom</name> redatti tra il <date when="1943">1943</date> e il <date when="1944">1944</date> accompagnati dalla lettera originale della madre <name type="person" ref="#AS">Amalia</name></summary>
+                        <msItem>
+                            <author ref="#EA">Emanuele Artom</author>
+                            <title>Diario di Emanuele Artom</title>
+                            <textLang mainLang="it">Italiano</textLang>
+                            <note>Sono contenute le pagine del diario dal <date when="1943-11">novembre 1943</date> al <date when="1944-02-23">23 febbraio 1944</date></note>
+                        </msItem>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc material="paper">
+                                <support>Fogli di <material>carta</material></support>
+                                <extent><num type="cardinal">172</num> pagine e <num type="cardinal" value="1">un</num> foglietto della madre di <name type="person" ref="#EA">Emanuele Artom</name>.</extent>
+                                <collation>
+                                    <p>Il diario è preceduto da una nota scritta dalla madre di Emanuele Artom.</p>
+                                </collation>
+                                <condition>
+                                    <p>Le pagine talvolta presentano strappi sui bordi o macchie che però non compromettono la lettura del testo.</p>
+                                </condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <p>Le pagine hanno un numero di righe che varia tra <num type="cardinal">18</num> e <num type="cardinal">30</num>.</p>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc hands="1">
+                            <p>Il manoscritto è stato redatto esclusivamente dalla mano di <name type="person" ref="#EA">Emanuele Artom</name>.</p>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <p>Manoscritto realizzato tra il <date when="1943">1943</date> e il <date when="1944">1944</date> in <name type="place">Italia</name>. </p>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>La codifica del testo è stata realizzata rispettando le linee guida TEI P5 come progetto d'esame del corso di Codifica di Testi dell'<name type="org" ref="#unipi">Università di Pisa.</name></p>
+            </projectDesc>
+            <editorialDecl> 
+                <correction status="high" method="markup"> 
+                    <p>Per la correzione di errori sono stati usati i tag <gi>sic</gi> e <gi>corr</gi>. </p>
+                    <p>All'interno delle pagine selezionate è presente un singolo errore:
+                        <list>
+                            <item>pag. 60, riga 18: da "battaglià" a "battaglia"</item>
+                        </list>
+                        .
+                    </p>
+                </correction>
+                <quotation marks="all">
+                    <p>Sono state aggiunte le virgolette nel testo attraverso il tag <gi>supplied</gi> laddove necessarie per indicare discorsi diretti.</p>
+                </quotation>
+                <hyphenation eol="all">
+                    <p>Tutti i trattini del ritorno a capo sono stati segnalati attraverso l'attributo <att>rend</att>, indicando l'interruzione di parola attraverso l'attributo <att>break</att> dell'elemento milestone <gi>lb</gi>.</p>
+                </hyphenation>
+                <interpretation>
+                    <p>I cognomi o i soprannomi che nella fonte venivano indicati esclusivamente attraverso una forma contratta sono stati indicati attraverso il tag <gi>abbr</gi>, in seguito sciolti utilizzando il tag <gi>expan</gi>.</p>
+                </interpretation>
+            </editorialDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language ident="it" usage="100">Italiano</language>
+            </langUsage>
+            <creation>
+                <date when="1943">1943</date>-<date when="1944">1944</date>
+            </creation>
+        </profileDesc>
+    </teiHeader>
+
+    <facsimile>
+        <surface xml:id="p58" start="#pb58" n="1">
+            <graphic url='img/pag58.jpg' width='600.4px' height='817.4px' />
+            <zone ulx="344" uly="64" lrx="418" lry="90" xml:id="p58_date" corresp="#p58_dateLine"/>
+            <zone ulx="83" uly="94" lrx="524" lry="125" xml:id="p58_l1" start="#p58_lb1"/>
+            <zone ulx="83" uly="129" lrx="525" lry="159" xml:id="p58_l2" start="#p58_lb2"/>
+            <zone ulx="83" uly="162" lrx="527" lry="187" xml:id="p58_l3" start="#p58_lb3"/>
+            <zone ulx="83" uly="193" lrx="525" lry="217" xml:id="p58_l4" start="#p58_lb4"/>
+            <zone ulx="82" uly="223" lrx="523" lry="249" xml:id="p58_l5" start="#p58_lb5"/>
+            <zone ulx="83" uly="253" lrx="524" lry="281" xml:id="p58_l6" start="#p58_lb6"/>
+            <zone ulx="81" uly="284" lrx="524" lry="309" xml:id="p58_l7" start="#p58_lb7"/>
+            <zone ulx="82" uly="316" lrx="524" lry="339" xml:id="p58_l8" start="#p58_lb8"/>
+            <zone ulx="83" uly="344" lrx="528" lry="372" xml:id="p58_l9" start="#p58_lb9"/>
+            <zone ulx="83" uly="380" lrx="545" lry="408" xml:id="p58_l10" start="#p58_lb10"/>
+            <zone ulx="82" uly="410" lrx="549" lry="434" xml:id="p58_l11" start="#p58_lb11"/>
+            <zone ulx="42" uly="430" lrx="535" lry="467" xml:id="p58_l12" start="#p58_lb12"/>
+            <zone ulx="78" uly="470" lrx="500" lry="499" xml:id="p58_l13" start="#p58_lb13"/>
+            <zone ulx="79" uly="504" lrx="534" lry="530" xml:id="p58_l14" start="#p58_lb14"/>
+            <zone ulx="79" uly="536" lrx="524" lry="558" xml:id="p58_l15" start="#p58_lb15"/>
+            <zone ulx="79" uly="562" lrx="527" lry="592" xml:id="p58_l16" start="#p58_lb16"/>
+            <zone ulx="79" uly="596" lrx="539" lry="622" xml:id="p58_l17" start="#p58_lb17"/>
+            <zone ulx="79" uly="626" lrx="497" lry="653" xml:id="p58_l18" start="#p58_lb18"/>
+            <zone ulx="79" uly="657" lrx="519" lry="684" xml:id="p58_l19" start="#p58_lb19"/>
+            <zone ulx="79" uly="689" lrx="531" lry="719" xml:id="p58_l20" start="#p58_lb20"/>
+            <zone ulx="79" uly="724" lrx="514" lry="751" xml:id="p58_l21" start="#p58_lb21"/>
+        </surface>
+        <surface xml:id="p59" start="#pb59" n="2">
+            <graphic url='img/pag59.jpg' width='599.933334px' height='812.933334px' />
+            <zone ulx="74" uly="65" lrx="536" lry="95" xml:id="p59_l1" start="#p59_lb1"/>
+            <zone ulx="69" uly="101" lrx="518" lry="128" xml:id="p59_l2" start="#p59_lb2"/>
+            <zone ulx="76" uly="134" lrx="515" lry="160" xml:id="p59_l3" start="#p59_lb3"/>
+            <zone ulx="77" uly="166" lrx="533" lry="190" xml:id="p59_l4" start="#p59_lb4"/>
+            <zone ulx="75" uly="195" lrx="520" lry="220" xml:id="p59_l5" start="#p59_lb5"/>
+            <zone ulx="77" uly="225" lrx="522" lry="253" xml:id="p59_l6" start="#p59_lb6"/>
+            <zone ulx="76" uly="258" lrx="506" lry="282" xml:id="p59_l7" start="#p59_lb7"/>
+            <zone ulx="75" uly="288" lrx="530" lry="312" xml:id="p59_l8" start="#p59_lb8"/>
+            <zone ulx="75" uly="321" lrx="524" lry="346" xml:id="p59_l9" start="#p59_lb9"/>
+            <zone ulx="75" uly="349" lrx="532" lry="380" xml:id="p59_l10" start="#p59_lb10"/>
+            <zone ulx="75" uly="385" lrx="526" lry="411" xml:id="p59_l11" start="#p59_lb11"/>
+            <zone ulx="75" uly="416" lrx="516" lry="440" xml:id="p59_l12" start="#p59_lb12"/>
+            <zone ulx="74" uly="445" lrx="539" lry="469" xml:id="p59_l13" start="#p59_lb13"/>
+            <zone ulx="75" uly="475" lrx="514" lry="501" xml:id="p59_l14" start="#p59_lb14"/>
+            <zone ulx="76" uly="509" lrx="508" lry="531" xml:id="p59_l15" start="#p59_lb15"/>
+            <zone ulx="70" uly="540" lrx="511" lry="561" xml:id="p59_l16" start="#p59_lb16"/>
+            <zone ulx="72" uly="570" lrx="516" lry="593" xml:id="p59_l17" start="#p59_lb17"/>
+            <zone ulx="74" uly="602" lrx="492" lry="625" xml:id="p59_l18" start="#p59_lb18"/>
+            <zone ulx="75" uly="634" lrx="515" lry="658" xml:id="p59_l19" start="#p59_lb19"/>
+            <zone ulx="75" uly="664" lrx="494" lry="686" xml:id="p59_l20" start="#p59_lb20"/>
+            <zone ulx="75" uly="691" lrx="507" lry="720" xml:id="p59_l21" start="#p59_lb21"/>
+            <zone ulx="75" uly="726" lrx="517" lry="753" xml:id="p59_l22" start="#p59_lb22"/>
+        </surface>
+        <surface xml:id="p60" start="#pb60" n="3">
+            <graphic url='img/pag60.jpg' width='599.933334px' height='811.933334px' />
+            <zone ulx="81" uly="73" lrx="521" lry="95" xml:id="p60_l1" start="#p60_lb1"/>
+            <zone ulx="81" uly="104" lrx="520" lry="128" xml:id="p60_l2" start="#p60_lb2"/>
+            <zone ulx="81" uly="134" lrx="521" lry="161" xml:id="p60_l3" start="#p60_lb3"/>
+            <zone ulx="77" uly="166" lrx="508" lry="190" xml:id="p60_l4" start="#p60_lb4"/>
+            <zone ulx="71" uly="194" lrx="524" lry="225" xml:id="p60_l5" start="#p60_lb5"/>
+            <zone ulx="75" uly="228" lrx="532" lry="257" xml:id="p60_l6" start="#p60_lb6"/>
+            <zone ulx="77" uly="259" lrx="543" lry="289" xml:id="p60_l7" start="#p60_lb7"/>
+            <zone ulx="79" uly="292" lrx="526" lry="322" xml:id="p60_l8" start="#p60_lb8"/>
+            <zone ulx="80" uly="324" lrx="523" lry="350" xml:id="p60_l9" start="#p60_lb9"/>
+            <zone ulx="79" uly="355" lrx="542" lry="382" xml:id="p60_l10" start="#p60_lb10"/>
+            <zone ulx="81" uly="385" lrx="546" lry="412" xml:id="p60_l11" start="#p60_lb11"/>
+            <zone ulx="80" uly="416" lrx="524" lry="443" xml:id="p60_l12" start="#p60_lb12"/>
+            <zone ulx="79" uly="446" lrx="538" lry="476" xml:id="p60_l13" start="#p60_lb13"/>
+            <zone ulx="79" uly="480" lrx="523" lry="504" xml:id="p60_l14" start="#p60_lb14"/>
+            <zone ulx="78" uly="509" lrx="512" lry="539" xml:id="p60_l15" start="#p60_lb15"/>
+            <zone ulx="78" uly="544" lrx="492" lry="566" xml:id="p60_l16" start="#p60_lb16"/>
+            <zone ulx="80" uly="570" lrx="525" lry="600" xml:id="p60_l17" start="#p60_lb17"/>
+            <zone ulx="80" uly="606" lrx="523" lry="629" xml:id="p60_l18" start="#p60_lb18"/>
+            <zone ulx="80" uly="638" lrx="535" lry="664" xml:id="p60_l19" start="#p60_lb19"/>
+            <zone ulx="79" uly="669" lrx="503" lry="692" xml:id="p60_l20" start="#p60_lb20"/>
+            <zone ulx="80" uly="699" lrx="502" lry="724" xml:id="p60_l21" start="#p60_lb21"/>
+            <zone ulx="78" uly="730" lrx="507" lry="758" xml:id="p60_l22" start="#p60_lb22"/>
+        </surface>
+    </facsimile>
+
+    <text xml:lang="it">
+        <body>
+            <div>
+                <opener>
+                    <dateline facs="#p58_date" xml:id="p58_dateLine">
+                        <date when="1943-12-11">11 <choice><abbr type="suspension">dic</abbr><expan resp="#SDV" cert="high">dic<ex>embre</ex></expan></choice> <supplied reason="omitted-in-original" cert="high" resp="#SDV">1943</supplied></date>,
+                    </dateline>
+                </opener>
+                <ab>
+                    <pb n="1" facs="#pag58" xml:id="pb58"/>
+
+                    <lb n="1" facs="#p58_l1" xml:id="p58_lb1"/>
+                    Fa freddino freddino e scrivo con la mano tre
+                    <lb n="2" facs="#p58_l2" xml:id="p58_lb2" break="no" rend="double_stroke"/>
+                    mante vicino alla fiammella della lampada,
+                    <lb n="3" facs="#p58_l3" xml:id="p58_lb3"/>
+                    con <del rend="overstrike" hand="author">la vana</del> illusione <del rend="overstrike" hand="author">che</del> di riscaldarmi un po’.
+                    <lb n="4" facs="#p58_l4" xml:id="p58_lb4"/>
+                    Pensavo ieri sera di mettere le trappole, ma
+                    <lb n="5" facs="#p58_l5" xml:id="p58_lb5"/>
+                    poi ho rinunziato, cosi ché i topi hanno con
+                    <lb n="6" facs="#p58_l6" xml:id="p58_lb6" break="no" rend="double_stroke"/>
+                    tinuato le loro scorribande. Perchè ho rinun
+                    <lb n="7" facs="#p58_l7" xml:id="p58_lb7" break="no" rend="double_stroke"/>
+                    ziato? La ragione principale sarebbe quella
+                    <lb n="8" facs="#p58_l8" xml:id="p58_lb8"/>
+                    di non uccidere un animaletto che mi dà
+                    <lb n="9" facs="#p58_l9" xml:id="p58_lb9"/>
+                    poca noia e questa poca senza sua colpa, ma
+                    <lb n="10" facs="#p58_l10" xml:id="p58_lb10"/>
+                    se ne aggiungono immediatamente due altre:
+                    <lb n="11" facs="#p58_l11" xml:id="p58_lb11"/>
+                    la soddisfazione <del rend="overstrike" hand="author">di fa</del> personale di <del rend="overstrike" hand="author">fare una</del>
+                    <lb n="12" facs="#p58_l12" xml:id="p58_lb12"/>
+                    <subst><del rend="overstrike" hand="author">buona azione</del><add place="above" hand="author">comportarsi bene</add></subst> indipendentemente dalla sorte
+                    <lb n="13" facs="#p58_l13" xml:id="p58_lb13"/>
+                    del topo, e la pigrizia di procurarmi una 
+                    <lb n="14" facs="#p58_l14" xml:id="p58_lb14"/>
+                    trappola. Ultima ragione — ultima o prima? —
+                    <lb n="15" facs="#p58_l15" xml:id="p58_lb15"/>
+                    il desiderio di scrivere sul mio diario questo
+                    <lb n="16" facs="#p58_l16" xml:id="p58_lb16"/>
+                    sottile esame di coscienza. Stamane, come già
+                    <lb n="17" facs="#p58_l17" xml:id="p58_lb17"/>
+                    ieri sera, ripresi a studiare storia e poi andai
+                    <lb n="18" facs="#p58_l18" xml:id="p58_lb18"/>
+                    verso <name type="place" ref="#SA">St. Antonio</name>. C'era un tale <name type="person" ref="#ST">Sergio</name>, di
+                    <lb n="19" facs="#p58_l19" xml:id="p58_lb19"/>
+                    <name type="place" ref="#TP">Torre Pellice</name>, al quale riferii quanto dovrà
+                    <lb n="20" facs="#p58_l20" xml:id="p58_lb20"/>
+                    esporre su di me ai capi del <choice><abbr type="organization">P. d’A.</abbr><expan resp="#SDV" cert="high">Partito d'Azione</expan></choice> Mi raccontò
+                    <lb n="21" facs="#p58_l21" xml:id="p58_lb21"/>
+                    che <name type="person" ref="#PC"><choice><abbr type="suspension">Barb</abbr><expan resp="#SDV" cert="high">Barb<ex>ato</ex></expan></choice></name> disse qualche tempo fa a <name type="person" ref="#RM"><choice><abbr type="suspension">Rob</abbr><expan resp="#SDV" cert="high">Rob<ex>erto</ex></expan></choice></name>:
+
+                    <pb n="2" facs="#p59" xml:id="pb59"/>
+
+                    <lb n="1" facs="#p59_l1" xml:id="p59_lb1"/>
+                    <q><supplied reason="omitted-in-original" cert="high" resp="#SDV">&#171;</supplied><name type="person" ref="#EA">Ansaldi</name> ha ricevuto incarichi delicatissimi
+                    <lb n="2" facs="#p59_l2" xml:id="p59_lb2"/>
+                    e della massima fiducia. Non potete lamen
+                    <lb n="3" facs="#p59_l3" xml:id="p59_lb3" break="no" rend="double_stroke" />
+                    tarvi di come trattiamo i vostri compagni
+                    <lb n="4" facs="#p59_l4" xml:id="p59_lb4"/>
+                    di partito<supplied reason="omitted-in-original" cert="high" resp="#SDV">&#187;</supplied></q>. Sarebbe giusto se non mi avessero
+                    <lb n="5" facs="#p59_l5" xml:id="p59_lb5"/>
+                    isolato tanto che non potrò parlare con nessuno
+                    <lb n="6" facs="#p59_l6" xml:id="p59_lb6"/>
+                    e fare propaganda. A <name type="place" ref="#TP"><choice><abbr type="acronym">T. P.</abbr><expan resp="#SDV" cert="high">Torre Pellice</expan></choice></name> ci sono due Russi
+                    <lb n="7" facs="#p59_l7" xml:id="p59_lb7"/>
+                    dell’Ucraina Bianca, convinti comunisti,
+                    <lb n="8" facs="#p59_l8" xml:id="p59_lb8"/>
+                    che parlano bene l'italiano; non li lasciano
+                    <lb n="9" facs="#p59_l9" xml:id="p59_lb9"/>
+                    venire qui, per<del rend="overstrike" hand="author">ché</del> evitare che aumentino la
+                    <lb n="10" facs="#p59_l10" xml:id="p59_lb10"/>
+                    propaganda <choice><abbr type="suspension">com</abbr><expan resp="#SDV" cert="high"><ex>unista</ex></expan></choice>. Mi raccontò che <name type="person" ref="#VG">Walter</name> fa
+                    <lb n="11" facs="#p59_l11" xml:id="p59_lb11" break="no" rend="double_stroke"/>
+                    ceva del disfattismo sulle bande del <choice><abbr type="organization">P. d’A.</abbr><expan resp="#SDV" cert="high">Partito d'Azione</expan></choice>
+                    <lb n="12" facs="#p59_l12" xml:id="p59_lb12"/>
+                    e allora <name type="person" ref="#RM">Roberto</name> disse a <name type="person" ref="#GM">Fiore</name>, <name type="person" ref="#GC">Pietro</name> ecc: <q><supplied reason="omitted-in-original" cert="high" resp="#SDV">&#171;</supplied>se
+                    <!--NOTTE le t non sono completate ma è l'opzione più coerente con il resto della frase-->
+                    <lb n="13" facs="#p59_l13" xml:id="p59_lb13"/>
+                    non lo ritirate una <subst><del rend="overstrike" hand="author">notte</del><add place="inline" hand="author">mattina</add></subst> lo troverete
+                    <lb n="14" facs="#p59_l14" xml:id="p59_lb14"/>
+                    con <num type="cardinal">2</num> pallottole nella testa<supplied reason="omitted-in-original" cert="high" resp="#SDV">&#187;</supplied></q>. Ormai, dopo la
+                    <lb n="15" facs="#p59_l15" xml:id="p59_lb15"/>
+                    cattura di <name type="person" ref="#FBA">Barca</name>, <name type="person" ref="#PC">Barbato</name> vorrebbe mettere
+                    <lb n="16" facs="#p59_l16" xml:id="p59_lb16"/>
+                    un altro comandante comune alle due bande
+                    <lb n="17" facs="#p59_l17" xml:id="p59_lb17"/>
+                    e propone un medico dell'Esercito, socialista
+                    <lb n="18" facs="#p59_l18" xml:id="p59_lb18"/>
+                    di estrema sinistra, ma quelli temono di
+                    <lb n="19" facs="#p59_l19" xml:id="p59_lb19"/>
+                    vedersi arrivare uno dei loro. Qui ci sono
+                    <lb n="20" facs="#p59_l20" xml:id="p59_lb20"/>
+                    viveri per <num type="cardinal">6</num> mesi, ma non ne vogliono
+                    <lb n="21" facs="#p59_l21" xml:id="p59_lb21"/>
+                    dare a <name type="place" ref="#TP"><choice><abbr type="acronym">T. P.</abbr><expan resp="#SDV" cert="high">Torre Pellice</expan></choice></name>, a meno che versino del
+                    <lb n="22" facs="#p59_l22" xml:id="p59_lb22"/>
+                    denaro. La scissione pare ormai inevitabile
+
+                    <pb n="3" facs="#p60" xml:id="pb60"/>
+
+                    <lb n="1" facs="#p60_l1" xml:id="p60_lb1"/>
+                    e queste erano due bande di diverso partito
+                    <lb n="2" facs="#p60_l2" xml:id="p60_lb2"/>
+                    unite. Le più sono già <del rend="overstrike" hand="author">ind</del> separate. Colpa del
+                    <lb n="3" facs="#p60_l3" xml:id="p60_lb3"/>
+                    comitato interpartito che non seppe funzionare in
+                    <lb n="4" facs="#p60_l4" xml:id="p60_lb4"/>
+                    settembre: così in ogni paese uomini politici
+                    <lb n="5" facs="#p60_l5" xml:id="p60_lb5"/>
+                    locali <del rend="overstrike" hand="author">orgo</del> costituiscono formazioni di parti
+                    <lb n="6" facs="#p60_l6" xml:id="p60_lb6" break="no" rend="double_stroke"/>
+                    giani <subst><del rend="overstrike" hand="author">dando</del><add place="inline" hand="author">imprimendo</add></subst> la loro tendenza po
+                    <lb n="7" facs="#p60_l7" xml:id="p60_lb7" break="no" rend="double_stroke"/>
+                    litica, che si colora e precisa sempre più. Abbia
+                    <lb n="8" facs="#p60_l8" xml:id="p60_lb8" break="no" rend="double_stroke"/>
+                    mo avuto tre anni di guerra, poi ventidue
+                    <lb n="9" facs="#p60_l9" xml:id="p60_lb9"/>
+                    di fascismo, ora siamo <subst><del rend="overstrike" hand="author">nell</del><add place="inline" hand="author">sotto la</add></subst> domi
+                    <lb n="10" facs="#p60_l10" xml:id="p60_lb10" break="no" rend="double_stroke"/>
+                    nazione straniera e ci prepariamo alla guerra
+                    <lb n="11" facs="#p60_l11" xml:id="p60_lb11"/>
+                    civile. Evviva! Ecco come si svolse l’episodio
+                    <lb n="12" facs="#p60_l12" xml:id="p60_lb12"/>
+                    di <name type="place" ref="#BB">Bobbio</name>. <name type="person" ref="#FBA">Barca</name> con alcuni ufficiali
+                    <lb n="13" facs="#p60_l13" xml:id="p60_lb13"/>
+                    dovevano raggiungere la località in auto
+                    <lb n="14" facs="#p60_l14" xml:id="p60_lb14" break="no" rend="double_stroke"/>
+                    mobile prima, a piedi poi, precedendo il
+                    <lb n="15" facs="#p60_l15" xml:id="p60_lb15"/>
+                    grosso delle forze. Invece vollero compiere
+                    <lb n="16" facs="#p60_l16" xml:id="p60_lb16"/>
+                    tutta la strada in macchina e furono
+                    <lb n="17" facs="#p60_l17" xml:id="p60_lb17"/>
+                    catturati. Gli altri arrivarono e attacca
+                    <lb n="18" facs="#p60_l18" xml:id="p60_lb18" break="no" rend="double_stroke"/>
+                    rono <choice><sic>battaglià</sic><corr resp="#SDV" cert="high">battaglia</corr></choice>. Durante il combattimento
+                    <lb n="19" facs="#p60_l19" xml:id="p60_lb19"/>
+                    seppero che gli ufficiali erano stati arrestati.
+                    <lb n="20" facs="#p60_l20" xml:id="p60_lb20"/>
+                    I militi, appena appresero dalla cattura
+                    <lb n="21" facs="#p60_l21" xml:id="p60_lb21"/>
+                    dei primi che l’assalto era imminente,
+                    <lb n="22" facs="#p60_l22" xml:id="p60_lb22"/>
+                    telefonarono chiedendo aiuto, prima che                    
+                </ab>
+            </div>
+        </body>
+
+        <back>
+            <div>
+                <listPerson>
+                    <head>Elenco persone</head>
+                    <person xml:id="ST">
+						<persName>
+					        <ref xml:lang="it" target="https://www.anpi.it/biografia/sergio-toja"/>
+							<forename>Sergio</forename>
+							<surname>Toja</surname>
+						</persName>
+						<sex value="M">maschio</sex>
+						<birth>
+							<date when="1923-11-07">7 novembre 1923</date>
+							<placeName ref="#LSG">
+								<settlement type="municipality">Luserna San Giovanni</settlement>
+                                <settlement type="region">Piemonte</settlement>
+								<country key="IT">Italia</country>
+							</placeName>
+						</birth>
+						<death>
+							<date when="1944-01-24">24 gennaio 1944</date>
+							<placeName ref="#BI">
+								<settlement type="municipality">Bibiana</settlement>
+                                <settlement type="region">Piemonte</settlement>
+								<country key="IT">Italia</country>
+							</placeName>
+						</death>
+					</person>
+
+                    <person xml:id="PC">
+						<persName>
+					        <ref xml:lang="it" target="https://www.anpi.it/biografia/pompeo-colajanni"/>
+							<forename>Pompeo</forename>
+							<surname>Colajanni</surname>
+                            <addName type="nick">Nicola Barbato</addName>
+						</persName>
+						<sex value="M">maschio</sex>
+						<birth>
+							<date when="1906-01-04">4 gennaio 1906</date>
+							<placeName ref="#CL">
+								<settlement type="municipality">Caltanissetta</settlement>
+                                <settlement type="region">Sicilia</settlement>
+								<country key="IT">Italia</country>
+							</placeName>
+						</birth>
+						<death>
+							<date when="1987-12-08">8 dicembre 1987</date>
+							<placeName ref="#PA">
+								<settlement type="municipality">Palermo</settlement>
+                                <settlement type="region">Sicilia</settlement>
+								<country key="IT">Italia</country>
+							</placeName>
+						</death>
+					</person>
+
+                    <person xml:id="RM">
+						<persName>
+					        <ref xml:lang="it" target="http://intranet.istoreto.it/partigianatomeridionale/dettaglio.asp?id=52149"/>
+							<forename>Roberto</forename>
+							<surname>Malan</surname>
+						</persName>
+						<sex value="M">maschio</sex>
+						<birth>
+							<date when="1920-03-24">24 marzo 1920</date>
+							<placeName ref="#CT">
+								<settlement type="municipality">Catania</settlement>
+                                <settlement type="region">Sicilia</settlement>
+								<country key="IT">Italia</country>
+							</placeName>
+						</birth>
+					</person>
+
+                    <person xml:id="EA">
+						<persName>
+					        <ref xml:lang="it" target="http://digital-library.cdec.it/cdec-web/persone/detail/person-it-cdec-eaccpf0001-000015/artom-emanuele.html"/>
+							<forename>Emanuele</forename>
+							<surname>Artom</surname>
+                            <addName type="nick">Ansaldi</addName>
+						</persName>
+						<sex value="M">maschio</sex>
+						<birth>
+							<date when="1915-06-23">23 giugno 1915</date>
+							<placeName ref="#AO">
+								<settlement type="municipality">Aosta</settlement>
+                                <settlement type="region">Valle d'Aosta</settlement>
+								<country key="IT">Italia</country>
+							</placeName>
+						</birth>
+						<death>
+							<date when="1944-04-07">7 aprile 1944</date>
+							<placeName ref="#TO">
+								<settlement type="municipality">Torino</settlement>
+                                <settlement type="region">Piemonte</settlement>
+								<country key="IT">Italia</country>
+							</placeName>
+						</death>
+					</person>
+
+                    <person xml:id="GM">
+						<persName>
+					        <forename>Guglielmo</forename>
+							<surname>Marcellino</surname>
+                            <addName type="nick">Fiore</addName>
+						</persName>
+						<sex value="M">maschio</sex>
+					</person>
+
+                    <person xml:id="VG">
+						<persName>
+					        <forename>Valter</forename>
+							<surname>Giai</surname>
+						</persName>
+						<sex value="M">maschio</sex>
+					</person>
+
+                    <person xml:id="GC">
+						<persName>
+					        <ref xml:lang="it" target="https://www.anpi.it/biografia/gustavo-comollo"/>
+							<forename>Gustavo</forename>
+							<surname>Comollo</surname>
+                            <addName type="nick">Pietro</addName>
+						</persName>
+						<sex value="M">maschio</sex>
+						<birth>
+							<date when="1904-01-27">27 gennaio 1904</date>
+							<placeName ref="#TO">
+								<settlement type="municipality">Torino</settlement>
+                                <settlement type="region">Piemonte</settlement>
+								<country key="IT">Italia</country>
+							</placeName>
+						</birth>
+						<death>
+							<date when="2000">2000</date>
+							<placeName ref="#TO">
+								<settlement type="municipality">Torino</settlement>
+                                <settlement type="region">Piemonte</settlement>
+								<country key="IT">Italia</country>
+							</placeName>
+						</death>
+					</person>
+
+                    <person xml:id="FBA">
+						<persName>
+					        <forename>Franco</forename>
+							<surname>Bartoli Avveduti</surname>
+                            <addName type="nick">Barca</addName>
+						</persName>
+						<sex value="M">maschio</sex>
+					</person>
+
+                    <person xml:id="AS">
+						<persName>
+					        <ref xml:lang="it" target="http://digital-library.cdec.it/cdec-web/persone/detail/person-it-cdec-eaccpf0001-017448/segre-amalia.html"/>
+							<forename>Amalia</forename>
+							<surname>Segre</surname>
+						</persName>
+						<sex value="F">femmina</sex>
+						<birth>
+							<date when="1890">1890</date>
+							<placeName ref="#AO">
+								<settlement type="municipality">Torino</settlement>
+                                <settlement type="region">Piemonte</settlement>
+								<country key="IT">Italia</country>
+							</placeName>
+						</birth>
+						<death>
+							<date when="1972-10-09">9 ottobre 1972</date>
+							<placeName ref="#TO">
+								<settlement type="municipality">Torino</settlement>
+                                <settlement type="region">Piemonte</settlement>
+								<country key="IT">Italia</country>
+							</placeName>
+						</death>
+					</person>
+                </listPerson>
+
+                <listPlace>
+                    <head>Elenco luoghi</head>
+                    <place xml:id="TP">
+                        <placeName ref="https://www.comunetorrepellice.it/">Torre Pellice</placeName>
+                        <settlement type="province">Torino</settlement>
+                        <settlement type="region">Piemonte</settlement>
+                        <country key="IT">Italia</country>
+                    </place>
+
+                    <place xml:id="SA">
+                        <placeName ref="https://www.santantonioabate.afom.it/barge-cn-frazione-gabiola-cappella-di-santantonio/">Sant'Antonio in Gabiola</placeName>
+                        <settlement type="province">Cuneo</settlement>
+                        <settlement type="region">Piemonte</settlement>
+                        <country key="IT">Italia</country>
+                    </place>
+
+                    <place xml:id="BB">
+                        <placeName ref="https://www.comune.bobbio.pc.it/">Bobbio</placeName>
+                        <settlement type="province">Piacenza</settlement>
+                        <settlement type="region">Emilia Romagna</settlement>
+                        <country key="IT">Italia</country>
+                    </place>
+
+                </listPlace>
+
+                <listBibl>
+                    <biblStruct>
+                        <monogr xml:id="DeBenedetti-Ravenna">
+                            <author>De Benedetti, Paula</author>
+                            <author>Ravenna, Eloisa</author>
+                            <title>Emanuele Artom, Diari: gennaio 1940 - febbraio 1944;</title>
+                            <edition>Prima edizione</edition>
+                            <imprint>
+                                <publisher>Centro di documentazione ebraica contemporanea - CDEC</publisher>
+                                <pubPlace>Milano</pubPlace>
+                                <date when="1966">1966</date>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                    
+                    <biblStruct>
+                        <monogr xml:id="Schwarz">
+                            <author>Schwarz, Guri</author>
+                            <title>Diari di un partigiano ebreo. Gennaio 1940 - febbraio 1944</title>
+                            <imprint>
+                                <publisher>Bollati Boringhieri</publisher>
+                                <pubPlace>Torino</pubPlace>
+                                <date when="2008">2008</date>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </listBibl>
+
+                <listOrg>
+                    <head>Elenco organizzazioni</head>
+                    <org xml:id="CDEC">
+                        <orgName ref="https://www.cdec.it/">Fondazione Centro di Documentazione Ebraica Contemporanea</orgName>
+                        <desc>La Fondazione CDEC è il principale centro di ricerca e documentazione sulla storia degli ebrei in Italia. Con oltre sessant’anni di attività alle spalle, è riconosciuta dalla comunità degli storici e degli studiosi come il maggiore ente in Italia di documentazione sulla Shoah ed è un polo di riferimento per la ricerca storica di settore.</desc>
+                    </org>
+
+                    <org xml:id="unipi">
+                        <orgName ref="https://www.unipi.it/">Università di Pisa</orgName>
+                        <desc source="https://it.wikipedia.org/wiki/Universit%C3%A0_di_Pisa">L'Università di Pisa, istituita ufficialmente nel <date when="1343">1343</date>, è una delle più antiche e prestigiose università in Italia e in Europa.</desc>
+                    </org>
+
+                    <org xml:id="PdA">
+                        <orgName ref="https://www.wikiwand.com/it/Partito_d%27Azione">Partito d'Azione</orgName>
+                        <desc source="https://www.wikiwand.com/it/Partito_d%27Azione">Il Partito d'Azione (PdA) è stato un partito politico italiano di centro-sinistra fondato nel <date when="1942">1942</date>.</desc>
+                    </org>
+                </listOrg>
+            </div>
+        </back>
+    </text>
+</TEI>

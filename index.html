@@ -1,0 +1,514 @@
+<!DOCTYPE HTML><html xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1"><script src="https://kit.fontawesome.com/2fd670a4d1.js" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="src/style.css">
+      <title>Codifica di Testi - pp 58,59,60 - Sofia Di Viesti</title>
+   </head>
+   <body>
+      <div class="header">
+         <h2>Codifica elettronica del diario di Emanuele Artom</h2>
+         <h3>Codifica TEI realizzata da Sofia Di Viesti</h3>
+         <h5>Edizione digitale realizzata come progetto d'esame di Codifica di testi del corso
+            di laurea in Informatica Umanistica dell'Università di Pisa</h5>
+      </div>
+      <div class="sezione1">
+         <h1>Analisi della fonte</h1>
+         <div class="containerTabelle">
+            <div class="containerTabella">
+               <h2>Descrizione bibliografica</h2>
+               <table>
+                  <tr>
+                     <td><strong>In breve</strong></td>
+                     <td><span>
+                           Raccolta degli scritti autografi di Emanuele Artom redatti tra il 1943 e il 1944 accompagnati
+                           dalla lettera originale della madre Amalia</span></td>
+                  </tr>
+                  <tr>
+                     <td><span><strong>Identificazione</strong></span></td>
+                     <td>
+                        <table>
+                           <tr>
+                              <td><strong>Posizione</strong></td>
+                              <td><span>Milano</span>, <span>Italia</span></td>
+                           </tr>
+                           <tr>
+                              <td><strong>Istituzione</strong></td>
+                              <td><span>CDEC - Centro di Documentazione Ebraica Contemporanea</span></td>
+                           </tr>
+                           <tr>
+                              <td><strong>Collezione</strong></td>
+                              <td><span>Fondo Emanuele Artom</span></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><strong>Item <span></span></strong></td>
+                     <td>
+                        <table>
+                           <tr>
+                              <td><strong>Titolo</strong></td>
+                              <td><span>Diario di Emanuele Artom</span></td>
+                           </tr>
+                           <tr>
+                              <td><strong>Autore</strong></td>
+                              <td><span>Emanuele Artom</span></td>
+                           </tr>
+                           <tr>
+                              <td><strong>Lingua</strong></td>
+                              <td><span>Italiano</span></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="containerTabella">
+               <h2>Descrizione fisica</h2>
+               <table>
+                  <tr>
+                     <td><span><strong>Supporto</strong></span></td>
+                     <td><span>Fogli di carta</span></td>
+                  </tr>
+                  <tr>
+                     <td><span><strong>Quantità</strong></span></td>
+                     <td>172 pagine e un foglietto della madre di Emanuele Artom.</td>
+                  </tr>
+                  <tr>
+                     <td><span><strong>Organizzazione</strong></span></td>
+                     <td>
+                        Il diario è preceduto da una nota scritta dalla madre di Emanuele Artom.
+                        </td>
+                  </tr>
+                  <tr>
+                     <td><span><strong>Condizioni</strong></span></td>
+                     <td><span>
+                           Le pagine talvolta presentano strappi sui bordi o macchie che però non compromettono
+                           la lettura del testo.
+                           </span></td>
+                  </tr>
+                  <tr>
+                     <td><span><strong>Impaginazione</strong></span></td>
+                     <td><span>Le pagine hanno un numero di righe che varia tra 18 e 30.</span></td>
+                  </tr>
+                  <tr>
+                     <td><span><strong>Mani</strong></span></td>
+                     <td><span>Il manoscritto è stato redatto esclusivamente dalla mano di Emanuele Artom.</span></td>
+                  </tr>
+                  <tr>
+                     <td><span><strong>Storia</strong></span></td>
+                     <td><span>Manoscritto realizzato tra il 1943 e il 1944 in Italia. </span></td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="controlPanel">
+            <div class="divBottoni">
+               <div>
+                  <h2>Evidenzia</h2><button class="addBtn" onclick="mostraFenomeno('add', 'darkblue', 'ev')">AGGIUNTE</button><button class="corrBtn" onclick="mostraFenomeno('corr', 'goldenrod', 'ev')">CORREZIONI</button><button class="placeBtn" onclick="mostraFenomeno('place', 'darkgreen', 'ev')">LUOGHI</button><button class="personBtn" onclick="mostraFenomeno('person', 'mediumvioletred', 'ev')">PERSONE</button><button class="abbrBtn" onclick="mostraFenomeno('abbr', 'crimson', 'ev')">ABBREVIAZIONI</button></div>
+               <div>
+                  <h2>Mostra</h2><button class="suppliedBtn" onclick="mostraFenomeno('supplied', 'darkcyan', 'show')">AGG. EDITORIALE</button><button class="sicBtn" onclick="mostraFenomeno('sic', 'firebrick', 'show')">ERRORI</button><button class="delBtn" onclick="mostraFenomeno('del', 'darkslategray', 'show')">CANCELLATURE</button><button class="expanBtn" onclick="mostraFenomeno('expan', 'darkslateblue', 'show')">ESPANSIONI</button></div>
+            </div>
+            <div class="divCambioPagina"><button onclick="cambioPagina(-1)"><i class="fa-solid fa-arrow-right fa-rotate-180"></i> Pagina precedente</button><button onclick="cambioPagina(1)">Pagina successiva <i class="fa-solid fa-arrow-right"></i></button></div>
+         </div>
+         <h2 id="indicatorePagina">Pagina X</h2>
+         <div class="page"><img src="img/pag58.jpg" usemap="#p58" alt="Immagine p58"><map name="p58"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_date" coords="344,64,418,90"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l1" coords="83,94,524,125"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l2" coords="83,129,525,159"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l3" coords="83,162,527,187"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l4" coords="83,193,525,217"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l5" coords="82,223,523,249"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l6" coords="83,253,524,281"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l7" coords="81,284,524,309"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l8" coords="82,316,524,339"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l9" coords="83,344,528,372"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l10" coords="83,380,545,408"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l11" coords="82,410,549,434"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l12" coords="42,430,535,467"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l13" coords="78,470,500,499"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l14" coords="79,504,534,530"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l15" coords="79,536,524,558"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l16" coords="79,562,527,592"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l17" coords="79,596,539,622"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l18" coords="79,626,497,653"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l19" coords="79,657,519,684"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l20" coords="79,689,531,719"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p58_l21" coords="79,724,514,751"></map><div class="trascrizione">
+               <p><span id="#p58_date">
+                     11 <span class="abbr">dic</span><span class="expan">embre</span> <span class="supplied">1943</span>,
+                     </span>
+                  
+                  <br><span id="#p58_l1" class="nRiga">1&nbsp;
+                     </span>
+                  Fa freddino freddino e scrivo con la mano tre
+                  
+                  =
+                  <br><span id="#p58_l2" class="nRiga">2&nbsp;
+                     </span>
+                  mante vicino alla fiammella della lampada,
+                  <br><span id="#p58_l3" class="nRiga">3&nbsp;
+                     </span>
+                  con <span class="del">la vana</span> illusione <span class="del">che</span> di riscaldarmi un po’.
+                  <br><span id="#p58_l4" class="nRiga">4&nbsp;
+                     </span>
+                  Pensavo ieri sera di mettere le trappole, ma
+                  <br><span id="#p58_l5" class="nRiga">5&nbsp;
+                     </span>
+                  poi ho rinunziato, cosi ché i topi hanno con
+                  
+                  =
+                  <br><span id="#p58_l6" class="nRiga">6&nbsp;
+                     </span>
+                  tinuato le loro scorribande. Perchè ho rinun
+                  
+                  =
+                  <br><span id="#p58_l7" class="nRiga">7&nbsp;
+                     </span>
+                  ziato? La ragione principale sarebbe quella
+                  <br><span id="#p58_l8" class="nRiga">8&nbsp;
+                     </span>
+                  di non uccidere un animaletto che mi dà
+                  <br><span id="#p58_l9" class="nRiga">9&nbsp;
+                     </span>
+                  poca noia e questa poca senza sua colpa, ma
+                  <br><span id="#p58_l10" class="nRiga">10&nbsp;
+                     </span>
+                  se ne aggiungono immediatamente due altre:
+                  <br><span id="#p58_l11" class="nRiga">11&nbsp;
+                     </span>
+                  la soddisfazione <span class="del">di fa</span> personale di <span class="del">fare una</span>
+                  <br><span id="#p58_l12" class="nRiga">12&nbsp;
+                     </span>
+                  <span class="del">buona azione</span><span class="add">comportarsi bene</span> indipendentemente dalla sorte
+                  <br><span id="#p58_l13" class="nRiga">13&nbsp;
+                     </span>
+                  del topo, e la pigrizia di procurarmi una 
+                  <br><span id="#p58_l14" class="nRiga">14&nbsp;
+                     </span>
+                  trappola. Ultima ragione — ultima o prima? —
+                  <br><span id="#p58_l15" class="nRiga">15&nbsp;
+                     </span>
+                  il desiderio di scrivere sul mio diario questo
+                  <br><span id="#p58_l16" class="nRiga">16&nbsp;
+                     </span>
+                  sottile esame di coscienza. Stamane, come già
+                  <br><span id="#p58_l17" class="nRiga">17&nbsp;
+                     </span>
+                  ieri sera, ripresi a studiare storia e poi andai
+                  <br><span id="#p58_l18" class="nRiga">18&nbsp;
+                     </span>
+                  verso <span class="place" onmouseover="mostraBox(this, &#34;on&#34;)" onmouseout="mostraBox(this, &#34;off&#34;)">St. Antonio<span class="info_box"><strong>Nome:</strong>&nbsp; Sant'Antonio in Gabiola,<br><strong>Provincia:</strong>&nbsp; Cuneo,<br><strong>Regione:</strong>&nbsp; Piemonte,<br><strong>Paese:</strong>&nbsp; Italia<br></span></span>. C'era un tale <span class="person">Sergio</span>, di
+                  <br><span id="#p58_l19" class="nRiga">19&nbsp;
+                     </span>
+                  <span class="place" onmouseover="mostraBox(this, &#34;on&#34;)" onmouseout="mostraBox(this, &#34;off&#34;)">Torre Pellice<span class="info_box"><strong>Nome:</strong>&nbsp; Torre Pellice,<br><strong>Provincia:</strong>&nbsp; Torino,<br><strong>Regione:</strong>&nbsp; Piemonte,<br><strong>Paese:</strong>&nbsp; Italia<br></span></span>, al quale riferii quanto dovrà
+                  <br><span id="#p58_l20" class="nRiga">20&nbsp;
+                     </span>
+                  esporre su di me ai capi del <span class="abbr">P. d’A.</span><span class="expan">
+                     (Partito d'Azione)
+                     </span> Mi raccontò
+                  <br><span id="#p58_l21" class="nRiga">21&nbsp;
+                     </span>
+                  che <span class="person"><span class="abbr">Barb</span><span class="expan">ato</span></span> disse qualche tempo fa a <span class="person"><span class="abbr">Rob</span><span class="expan">erto</span></span>:
+                  
+                  </p>
+            </div>
+         </div>
+         <div class="page"><img src="img/pag59.jpg" usemap="#p59" alt="Immagine p59"><map name="p59"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l1" coords="74,65,536,95"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l2" coords="69,101,518,128"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l3" coords="76,134,515,160"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l4" coords="77,166,533,190"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l5" coords="75,195,520,220"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l6" coords="77,225,522,253"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l7" coords="76,258,506,282"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l8" coords="75,288,530,312"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l9" coords="75,321,524,346"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l10" coords="75,349,532,380"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l11" coords="75,385,526,411"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l12" coords="75,416,516,440"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l13" coords="74,445,539,469"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l14" coords="75,475,514,501"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l15" coords="76,509,508,531"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l16" coords="70,540,511,561"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l17" coords="72,570,516,593"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l18" coords="74,602,492,625"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l19" coords="75,634,515,658"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l20" coords="75,664,494,686"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l21" coords="75,691,507,720"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p59_l22" coords="75,726,517,753"></map><div class="trascrizione">
+               <p>
+                  
+                  <br><span id="#p59_l1" class="nRiga">1&nbsp;
+                     </span>
+                  <span class="supplied">«</span><span class="person">Ansaldi</span> ha ricevuto incarichi delicatissimi
+                  <br><span id="#p59_l2" class="nRiga">2&nbsp;
+                     </span>
+                  e della massima fiducia. Non potete lamen
+                  
+                  =
+                  <br><span id="#p59_l3" class="nRiga">3&nbsp;
+                     </span>
+                  tarvi di come trattiamo i vostri compagni
+                  <br><span id="#p59_l4" class="nRiga">4&nbsp;
+                     </span>
+                  di partito<span class="supplied">»</span>. Sarebbe giusto se non mi avessero
+                  <br><span id="#p59_l5" class="nRiga">5&nbsp;
+                     </span>
+                  isolato tanto che non potrò parlare con nessuno
+                  <br><span id="#p59_l6" class="nRiga">6&nbsp;
+                     </span>
+                  e fare propaganda. A <span class="place" onmouseover="mostraBox(this, &#34;on&#34;)" onmouseout="mostraBox(this, &#34;off&#34;)"><span class="abbr">T. P.</span><span class="expan">
+                        (Torre Pellice)
+                        </span><span class="info_box"><strong>Nome:</strong>&nbsp; Torre Pellice,<br><strong>Provincia:</strong>&nbsp; Torino,<br><strong>Regione:</strong>&nbsp; Piemonte,<br><strong>Paese:</strong>&nbsp; Italia<br></span></span> ci sono due Russi
+                  <br><span id="#p59_l7" class="nRiga">7&nbsp;
+                     </span>
+                  dell’Ucraina Bianca, convinti comunisti,
+                  <br><span id="#p59_l8" class="nRiga">8&nbsp;
+                     </span>
+                  che parlano bene l'italiano; non li lasciano
+                  <br><span id="#p59_l9" class="nRiga">9&nbsp;
+                     </span>
+                  venire qui, per<span class="del">ché</span> evitare che aumentino la
+                  <br><span id="#p59_l10" class="nRiga">10&nbsp;
+                     </span>
+                  propaganda <span class="abbr">com</span><span class="expan">unista</span>. Mi raccontò che <span class="person">Walter</span> fa
+                  
+                  =
+                  <br><span id="#p59_l11" class="nRiga">11&nbsp;
+                     </span>
+                  ceva del disfattismo sulle bande del <span class="abbr">P. d’A.</span><span class="expan">
+                     (Partito d'Azione)
+                     </span>
+                  <br><span id="#p59_l12" class="nRiga">12&nbsp;
+                     </span>
+                  e allora <span class="person">Roberto</span> disse a <span class="person">Fiore</span>, <span class="person">Pietro</span> ecc: <span class="supplied">«</span>se
+                  
+                  <br><span id="#p59_l13" class="nRiga">13&nbsp;
+                     </span>
+                  non lo ritirate una <span class="del">notte</span><span class="add">mattina</span> lo troverete
+                  <br><span id="#p59_l14" class="nRiga">14&nbsp;
+                     </span>
+                  con 2 pallottole nella testa<span class="supplied">»</span>. Ormai, dopo la
+                  <br><span id="#p59_l15" class="nRiga">15&nbsp;
+                     </span>
+                  cattura di <span class="person">Barca</span>, <span class="person">Barbato</span> vorrebbe mettere
+                  <br><span id="#p59_l16" class="nRiga">16&nbsp;
+                     </span>
+                  un altro comandante comune alle due bande
+                  <br><span id="#p59_l17" class="nRiga">17&nbsp;
+                     </span>
+                  e propone un medico dell'Esercito, socialista
+                  <br><span id="#p59_l18" class="nRiga">18&nbsp;
+                     </span>
+                  di estrema sinistra, ma quelli temono di
+                  <br><span id="#p59_l19" class="nRiga">19&nbsp;
+                     </span>
+                  vedersi arrivare uno dei loro. Qui ci sono
+                  <br><span id="#p59_l20" class="nRiga">20&nbsp;
+                     </span>
+                  viveri per 6 mesi, ma non ne vogliono
+                  <br><span id="#p59_l21" class="nRiga">21&nbsp;
+                     </span>
+                  dare a <span class="place" onmouseover="mostraBox(this, &#34;on&#34;)" onmouseout="mostraBox(this, &#34;off&#34;)"><span class="abbr">T. P.</span><span class="expan">
+                        (Torre Pellice)
+                        </span><span class="info_box"><strong>Nome:</strong>&nbsp; Torre Pellice,<br><strong>Provincia:</strong>&nbsp; Torino,<br><strong>Regione:</strong>&nbsp; Piemonte,<br><strong>Paese:</strong>&nbsp; Italia<br></span></span>, a meno che versino del
+                  <br><span id="#p59_l22" class="nRiga">22&nbsp;
+                     </span>
+                  denaro. La scissione pare ormai inevitabile
+                  
+                  </p>
+            </div>
+         </div>
+         <div class="page"><img src="img/pag60.jpg" usemap="#p60" alt="Immagine p60"><map name="p60"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l1" coords="81,73,521,95"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l2" coords="81,104,520,128"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l3" coords="81,134,521,161"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l4" coords="77,166,508,190"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l5" coords="71,194,524,225"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l6" coords="75,228,532,257"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l7" coords="77,259,543,289"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l8" coords="79,292,526,322"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l9" coords="80,324,523,350"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l10" coords="79,355,542,382"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l11" coords="81,385,546,412"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l12" coords="80,416,524,443"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l13" coords="79,446,538,476"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l14" coords="79,480,523,504"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l15" coords="78,509,512,539"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l16" coords="78,544,492,566"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l17" coords="80,570,525,600"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l18" coords="80,606,523,629"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l19" coords="80,638,535,664"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l20" coords="79,669,503,692"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l21" coords="80,699,502,724"><area onmouseout="evidenzia(this, &#34;off&#34;)" onmouseover="evidenzia(this, &#34;on&#34;)" id="p60_l22" coords="78,730,507,758"></map><div class="trascrizione">
+               <p>
+                  
+                  <br><span id="#p60_l1" class="nRiga">1&nbsp;
+                     </span>
+                  e queste erano due bande di diverso partito
+                  <br><span id="#p60_l2" class="nRiga">2&nbsp;
+                     </span>
+                  unite. Le più sono già <span class="del">ind</span> separate. Colpa del
+                  <br><span id="#p60_l3" class="nRiga">3&nbsp;
+                     </span>
+                  comitato interpartito che non seppe funzionare in
+                  <br><span id="#p60_l4" class="nRiga">4&nbsp;
+                     </span>
+                  settembre: così in ogni paese uomini politici
+                  <br><span id="#p60_l5" class="nRiga">5&nbsp;
+                     </span>
+                  locali <span class="del">orgo</span> costituiscono formazioni di parti
+                  
+                  =
+                  <br><span id="#p60_l6" class="nRiga">6&nbsp;
+                     </span>
+                  giani <span class="del">dando</span><span class="add">imprimendo</span> la loro tendenza po
+                  
+                  =
+                  <br><span id="#p60_l7" class="nRiga">7&nbsp;
+                     </span>
+                  litica, che si colora e precisa sempre più. Abbia
+                  
+                  =
+                  <br><span id="#p60_l8" class="nRiga">8&nbsp;
+                     </span>
+                  mo avuto tre anni di guerra, poi ventidue
+                  <br><span id="#p60_l9" class="nRiga">9&nbsp;
+                     </span>
+                  di fascismo, ora siamo <span class="del">nell</span><span class="add">sotto la</span> domi
+                  
+                  =
+                  <br><span id="#p60_l10" class="nRiga">10&nbsp;
+                     </span>
+                  nazione straniera e ci prepariamo alla guerra
+                  <br><span id="#p60_l11" class="nRiga">11&nbsp;
+                     </span>
+                  civile. Evviva! Ecco come si svolse l’episodio
+                  <br><span id="#p60_l12" class="nRiga">12&nbsp;
+                     </span>
+                  di <span class="place" onmouseover="mostraBox(this, &#34;on&#34;)" onmouseout="mostraBox(this, &#34;off&#34;)">Bobbio<span class="info_box"><strong>Nome:</strong>&nbsp; Bobbio,<br><strong>Provincia:</strong>&nbsp; Piacenza,<br><strong>Regione:</strong>&nbsp; Emilia Romagna,<br><strong>Paese:</strong>&nbsp; Italia<br></span></span>. <span class="person">Barca</span> con alcuni ufficiali
+                  <br><span id="#p60_l13" class="nRiga">13&nbsp;
+                     </span>
+                  dovevano raggiungere la località in auto
+                  
+                  =
+                  <br><span id="#p60_l14" class="nRiga">14&nbsp;
+                     </span>
+                  mobile prima, a piedi poi, precedendo il
+                  <br><span id="#p60_l15" class="nRiga">15&nbsp;
+                     </span>
+                  grosso delle forze. Invece vollero compiere
+                  <br><span id="#p60_l16" class="nRiga">16&nbsp;
+                     </span>
+                  tutta la strada in macchina e furono
+                  <br><span id="#p60_l17" class="nRiga">17&nbsp;
+                     </span>
+                  catturati. Gli altri arrivarono e attacca
+                  
+                  =
+                  <br><span id="#p60_l18" class="nRiga">18&nbsp;
+                     </span>
+                  rono <span class="sic">battaglià</span><span class="corr">battaglia</span>. Durante il combattimento
+                  <br><span id="#p60_l19" class="nRiga">19&nbsp;
+                     </span>
+                  seppero che gli ufficiali erano stati arrestati.
+                  <br><span id="#p60_l20" class="nRiga">20&nbsp;
+                     </span>
+                  I militi, appena appresero dalla cattura
+                  <br><span id="#p60_l21" class="nRiga">21&nbsp;
+                     </span>
+                  dei primi che l’assalto era imminente,
+                  <br><span id="#p60_l22" class="nRiga">22&nbsp;
+                     </span>
+                  telefonarono chiedendo aiuto, prima che                    
+                  </p>
+            </div>
+         </div>
+         <div class="controlPanel">
+            <div class="divCambioPagina"><button onclick="cambioPagina(-1)"><i class="fa-solid fa-arrow-right fa-rotate-180"></i> Pagina precedente</button><button onclick="cambioPagina(1)">Pagina successiva <i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="divBottoni">
+               <div>
+                  <h2>Evidenzia</h2><button class="addBtn" onclick="mostraFenomeno('add', 'darkblue', 'ev')">AGGIUNTE</button><button class="corrBtn" onclick="mostraFenomeno('corr', 'goldenrod', 'ev')">CORREZIONI</button><button class="placeBtn" onclick="mostraFenomeno('place', 'darkgreen', 'ev')">LUOGHI</button><button class="personBtn" onclick="mostraFenomeno('person', 'mediumvioletred', 'ev')">PERSONE</button><button class="abbrBtn" onclick="mostraFenomeno('abbr', 'crimson', 'ev')">ABBREVIAZIONI</button></div>
+               <div>
+                  <h2>Mostra</h2><button class="suppliedBtn" onclick="mostraFenomeno('supplied', 'darkcyan', 'show')">AGG. EDITORIALE</button><button class="sicBtn" onclick="mostraFenomeno('sic', 'firebrick', 'show')">ERRORI</button><button class="delBtn" onclick="mostraFenomeno('del', 'darkslategray', 'show')">CANCELLATURE</button><button class="expanBtn" onclick="mostraFenomeno('expan', 'darkslateblue', 'show')">ESPANSIONI</button></div>
+            </div>
+         </div>
+         <div class="containerFooter"><button id="bottonePannello" onclick="mostraListe()">Visualizza persone e organizzazioni</button><div id="containerListe">
+               <div class="containerLista">
+                  <h2>Elenco persone</h2>
+                  <ul>
+                     <li>
+                        					        
+                        							Sergio
+                        							Toja
+                        						
+                        (M)<br>7 novembre 1923 - 24 gennaio 1944<br></li>
+                  </ul>
+                  <ul>
+                     <li>
+                        					        
+                        							Pompeo
+                        							Colajanni
+                        Nicola Barbato
+                        						
+                        (M)<br>4 gennaio 1906 - 8 dicembre 1987<br></li>
+                  </ul>
+                  <ul>
+                     <li>
+                        					        
+                        							Roberto
+                        							Malan
+                        						
+                        (M)<br>24 marzo 1920 - <br></li>
+                  </ul>
+                  <ul>
+                     <li>
+                        					        
+                        							Emanuele
+                        							Artom
+                        Ansaldi
+                        						
+                        (M)<br>23 giugno 1915 - 7 aprile 1944<br></li>
+                  </ul>
+                  <ul>
+                     <li>
+                        					        Guglielmo
+                        							Marcellino
+                        Fiore
+                        						
+                        (M)<br></li>
+                  </ul>
+                  <ul>
+                     <li>
+                        					        Valter
+                        							Giai
+                        						
+                        (M)<br></li>
+                  </ul>
+                  <ul>
+                     <li>
+                        					        
+                        							Gustavo
+                        							Comollo
+                        Pietro
+                        						
+                        (M)<br>27 gennaio 1904 - 2000<br></li>
+                  </ul>
+                  <ul>
+                     <li>
+                        					        Franco
+                        							Bartoli Avveduti
+                        Barca
+                        						
+                        (M)<br></li>
+                  </ul>
+                  <ul>
+                     <li>
+                        					        
+                        							Amalia
+                        							Segre
+                        						
+                        (F)<br>1890 - 9 ottobre 1972<br></li>
+                  </ul>
+               </div>
+               <div class="containerLista">
+                  <h2>Elenco organizzazioni</h2>
+                  <ul>
+                     <li>Fondazione Centro di Documentazione Ebraica Contemporanea<br>La Fondazione CDEC è il principale centro di ricerca e documentazione sulla storia
+                        degli ebrei in Italia. Con oltre sessant’anni di attività alle spalle, è riconosciuta
+                        dalla comunità degli storici e degli studiosi come il maggiore ente in Italia di documentazione
+                        sulla Shoah ed è un polo di riferimento per la ricerca storica di settore.</li>
+                  </ul>
+                  <ul>
+                     <li>Università di Pisa<br>L'Università di Pisa, istituita ufficialmente nel 1343, è una delle più antiche e
+                        prestigiose università in Italia e in Europa.</li>
+                  </ul>
+                  <ul>
+                     <li>Partito d'Azione<br>Il Partito d'Azione (PdA) è stato un partito politico italiano di centro-sinistra
+                        fondato nel 1942.</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="sezione2">
+         <h1>Sul progetto</h1>
+         <p>
+            Edizione digitale realizzata a febbraio 2024.
+            
+            Questa edizione digitale è libera e diffusa attraverso GitHub.
+            La codifica del testo è stata realizzata rispettando le linee guida TEI P5 come progetto
+            d'esame del corso di Codifica di Testi dell'Università di Pisa.</p>
+         <h1>Scelte editoriali</h1>
+         <p>Per la correzione di errori sono stati usati i tag sic e corr. All'interno delle pagine
+            selezionate è presente un singolo errore:
+            pag. 60, riga 18: da "battaglià" a "battaglia"
+            .
+            <br><br>Sono state aggiunte le virgolette nel testo attraverso il tag supplied laddove necessarie
+            per indicare discorsi diretti.<br><br>Tutti i trattini del ritorno a capo sono stati segnalati attraverso l'attributo rend,
+            indicando l'interruzione di parola attraverso l'attributo break dell'elemento milestone
+            lb.<br><br>I cognomi o i soprannomi che nella fonte venivano indicati esclusivamente attraverso
+            una forma contratta sono stati indicati attraverso il tag abbr, in seguito sciolti
+            utilizzando il tag expan.</p>
+         <h1>Bibliografia</h1>
+         <p>
+            <ul>
+               <li>Emanuele Artom, Diari: gennaio 1940 - febbraio 1944;,
+                  De Benedetti, Paula Ravenna, Eloisa,
+                  Milano,
+                  1966,
+                  Centro di documentazione ebraica contemporanea - CDEC;
+                  </li>
+               <li>Diari di un partigiano ebreo. Gennaio 1940 - febbraio 1944,
+                  Schwarz, Guri,
+                  Torino,
+                  2008,
+                  Bollati Boringhieri;
+                  </li>
+            </ul>
+         </p>
+      </div>
+      <footer>
+         <p>Pagina web realizzata usando la trasformazione XSLT della codifica XML TEI delle pagine
+            58-60 del diario di Emanuele Artom.</p>
+         <p>Vedi su <a target="_blank" href="https://github.com/sofisdv/progettoCodificaTesti/tree/main">GitHub</a>.</p><br><p>di Sofia Di Viesti, gennaio-febbraio 2024</p>
+      </footer><script type="text/javascript" src="src/script.js"></script></body>
+</html>
